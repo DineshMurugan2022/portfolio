@@ -1,6 +1,5 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react"; // ✅ Icon imports
+import { ExternalLink, Github } from "lucide-react";
+ // Optional custom styles
 
 const projects = [
   {
@@ -35,104 +34,65 @@ const projects = [
     description:
       "A personal portfolio website showcasing projects and skills, built with modern web technologies.",
     image: "https://placehold.co/600x400/e9ecef/495057?text=Portfolio+Website",
-    tags: ["React", "bootstrap", "Vite"],
+    tags: ["React", "Bootstrap", "Vite"],
     liveUrl: "#",
     githubUrl: "#",
   },
 ];
 
 const ProjectCard = ({ project }) => {
-  const cardRef = useRef(null);
-
   return (
-    <motion.div
-      ref={cardRef}
-      whileHover={{
-        scale: 1.04,
-        boxShadow: "0 12px 36px 0 rgba(31, 38, 135, 0.18)",
-        transition: { duration: 0.3 },
-      }}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        delay: 0.1,
-      }}
-      className="project-card card h-100 shadow-sm border rounded overflow-hidden position-relative"
-      style={{ cursor: "pointer" }}
-    >
+    <div className="project-card card h-100 shadow-sm border rounded overflow-hidden position-relative" style={{ color: '#222', background: 'rgba(255,255,255,0.92)' }}>
       <div className="position-relative overflow-hidden" style={{ height: "200px" }}>
-        <motion.img
+        <img
           src={project.image}
           alt={project.title}
           className="card-img-top h-100 object-fit-cover"
-          whileHover={{ scale: 1.08 }}
-          transition={{ duration: 0.5 }}
         />
       </div>
       <div className="card-body d-flex flex-column">
-        <h5 className="card-title fw-bold mb-2">{project.title}</h5>
-        <p className="card-text text-muted flex-grow-1 mb-3">{project.description}</p>
+        <h5 className="card-title fw-bold mb-2" style={{ color: '#1a237e' }}>{project.title}</h5>
+        <p className="card-text flex-grow-1 mb-3" style={{ color: '#333' }}>{project.description}</p>
         <div className="mb-3">
           {project.tags.map((tag, idx) => (
-            <motion.span
-              key={idx}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 * idx }}
-              className="badge project-tag me-2 mb-1"
-              whileHover={{ scale: 1.12 }}
-            >
+            <span key={idx} className="badge project-tag me-2 mb-1" style={{ background: '#e3f2fd', color: '#1976d2' }}>
               {tag}
-            </motion.span>
+            </span>
           ))}
         </div>
         <div className="d-flex gap-2">
           {project.liveUrl && (
-            <motion.a
+            <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-sm d-flex align-items-center gap-1 project-btn"
-              whileHover={{ scale: 1.08 }}
             >
               <ExternalLink size={16} /> Live Demo
-            </motion.a>
+            </a>
           )}
           {project.githubUrl && (
-            <motion.a
+            <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1 project-btn"
-              whileHover={{ scale: 1.08 }}
             >
               <Github size={16} /> Code
-            </motion.a>
+            </a>
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="projects-section py-5 bg-light position-relative overflow-hidden">
+    <section id="projects" className="projects-section position-relative" style={{ background: 'transparent', padding: 0 }}>
       <div className="container">
-        <motion.h2
-          className="mb-4 text-center"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          My Projects
-        </motion.h2>
-        <div className="row g-4">
+        <h2 className="mb-4 text-center" style={{ color: '#222' }}>My Projects</h2>
+        <div className="row g-4" style={{ margin: 0 }}>
           {projects.map((project, idx) => (
             <div key={idx} className="col-12 col-md-6 col-lg-6">
               <ProjectCard project={project} />

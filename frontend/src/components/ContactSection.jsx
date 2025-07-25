@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -30,23 +29,9 @@ const ContactSection = () => {
   return (
     <section id="contact" className="contact-section py-5 position-relative overflow-hidden">
       <div className="container">
-        <motion.h2
-          className="text-center mb-5"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          Contact Me
-        </motion.h2>
+        <h2 className="text-center mb-5">Contact Me</h2>
         <div className="row align-items-center justify-content-center">
-          <motion.div
-            className="col-lg-6 mb-4"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <div className="col-lg-6 mb-4">
             <div className="contact-glass-card p-4 h-100">
               <h3 className="h4 mb-3">Get In Touch</h3>
               <p className="text-muted mb-4">
@@ -76,14 +61,8 @@ const ContactSection = () => {
                 </li>
               </ul>
             </div>
-          </motion.div>
-          <motion.div
-            className="col-lg-6"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          </div>
+          <div className="col-lg-6">
             <form onSubmit={handleSubmit} className="contact-glass-card bg-white p-4 rounded shadow-sm border position-relative">
               <div className="row mb-3">
                 <div className="col-md-6">
@@ -149,7 +128,7 @@ const ContactSection = () => {
                 </div>
               )}
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

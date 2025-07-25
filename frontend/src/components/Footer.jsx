@@ -78,7 +78,7 @@ const Footer = () => {
             transition: "transform 0.1s linear"
           }}>
             <p className="bg-secondary bg-opacity-25 d-inline-block px-4 py-2 rounded small shadow-sm backdrop-blur-sm">
-              &copy; {currentYear} Kumar. All rights reserved.
+              &copy; {currentYear} Dinesh. All rights reserved.
             </p>
           </div>
         </div>
