@@ -6,7 +6,7 @@ const projects = [
     title: "MERN E-commerce Platform",
     description:
       "A full-featured e-commerce platform built with MongoDB, Express, React, and Node.js with user authentication and payment integration.",
-    image: "https://placehold.co/600x400/e9ecef/495057?text=MERN+E-commerce",
+    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+TUVSTiBFLWNvbW1lcmNlPC90ZXh0Pgo8L3N2Zz4K",
     tags: ["React", "Node.js", "MongoDB", "Express.js"],
     liveUrl: "#",
     githubUrl: "#",
@@ -15,7 +15,7 @@ const projects = [
     title: "Task Management App",
     description:
       "A Kanban-style task management application with drag-and-drop functionality and user authentication built with the MERN stack.",
-    image: "https://placehold.co/600x400/e9ecef/495057?text=Task+Management",
+    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+VGFzayBNYW5hZ2VtZW50PC90ZXh0Pgo8L3N2Zz4K",
     tags: ["React", "Node.js", "MongoDB", "Bootstrap"],
     liveUrl: "#",
     githubUrl: "#",
@@ -24,7 +24,7 @@ const projects = [
     title: "REST API for Blog Platform",
     description:
       "A RESTful API for a blog platform with user authentication, post creation, and comment functionality.",
-    image: "https://placehold.co/600x400/e9ecef/495057?text=REST+API",
+    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UkVTVCBBUEk8L3RleHQ+Cjwvc3ZnPgo=",
     tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
     liveUrl: "#",
     githubUrl: "#",
@@ -33,7 +33,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio website showcasing projects and skills, built with modern web technologies.",
-    image: "https://placehold.co/600x400/e9ecef/495057?text=Portfolio+Website",
+    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UG9ydGZvbGlvIFdlYnNpdGU8L3RleHQ+Cjwvc3ZnPgo=",
     tags: ["React", "Bootstrap", "Vite"],
     liveUrl: "#",
     githubUrl: "#",
