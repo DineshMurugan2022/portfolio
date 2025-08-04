@@ -1,57 +1,45 @@
-// SkillsSection.jsx
 import React from "react";
 import "./SkillsSection.css";
 
-// Logo data with data URLs instead of external URLs
-const logos = [
-  { title: "React", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjNjFkYWZiIi8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "Node.js", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjMzM5OTMzIi8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "MongoDB", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjMDBlZDY0Ii8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "Express.js", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjMDAwMDAwIi8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "Bootstrap", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjNzkxNmY5Ii8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "HTML", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjZTI3NDJjIi8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "CSS", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjMjY3N2RhIi8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-  { title: "JavaScript", src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjZjdkNzAyIi8+CjxwYXRoIGQ9Ik02NCA0MGMtMTMuMjU0IDAtMjQgMTAuNzQ2LTI0IDI0czEwLjc0NiAyNCAyNCAyNCAyNC0xMC43NDYgMjQtMjQtMTAuNzQ2LTI0LTI0LTI0em0wIDQ0Yy0xMS4wNDYgMC0yMC04Ljk1NC0yMC0yMHM4Ljk1NC0yMCAyMC0yMCAyMCA4Ljk1NCAyMCAyMC04Ljk1NCAyMC0yMCAyMHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik02NCAyOGMtMTkuODgyIDAtMzYgMTYuMTE4LTM2IDM2czE2LjExOCAzNiAzNiAzNiAzNi0xNi4xMTggMzYtMzYtMTYuMTE4LTM2LTM2LTM2em0wIDY0Yy0xNS40MzkgMC0yOC0xMi41NjEtMjgtMjhzMTIuNTYxLTI4IDI4LTI4IDI4IDEyLjU2MSAyOCAyOC0xMi41NjEgMjgtMjggMjh6IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" },
-];
-
 const SkillsSection = () => (
-  <div id="wrapper-slider-logo">
-    <div
-      className="resizable"
-      data-translate="items"
-      data-direction="horizontal"
-      data-blurring="true"
-      data-outline="false"
-      data-play-state="running"
-      data-spill="false"
-      style={{
-        "--speed": 60,
-        "--count": logos.length,
-        "--scale": 1,
-        "--blur": 1,
-        "--blurs": 8,
-      }}
-    >
-      <div className="container-slider-logo">
-        <div className="blur blur--left">
-          {[...Array(8)].map((_, i) => (
-            <div key={i} style={{ "--index": i }} />
-          ))}
-        </div>
-
-        <ul className="ul-logos">
-          {logos.map((logo, i) => (
-            <li key={`${logo.title}-${i}`} style={{ "--index": i }}>
-              <img src={logo.src} alt={`${logo.title} logo`} title={logo.title} loading="lazy" />
-            </li>
-          ))}
-        </ul>
-
-        <div className="blur blur--right">
-          {[...Array(8)].map((_, i) => (
-            <div key={i + 1} style={{ "--index": i + 1 }} />
-          ))}
-        </div>
+  <div className="skills-wrapper">
+    <div className="container1">
+      {/* Skill items */}
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" alt="GitHub" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" alt="Express.js" />
+      </div>
+      <div className="item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
       </div>
     </div>
   </div>

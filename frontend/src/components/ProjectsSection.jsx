@@ -1,107 +1,194 @@
-import { ExternalLink, Github } from "lucide-react";
- // Optional custom styles
+import React from 'react';
+import styled from 'styled-components';
 
-const projects = [
-  {
-    title: "MERN E-commerce Platform",
-    description:
-      "A full-featured e-commerce platform built with MongoDB, Express, React, and Node.js with user authentication and payment integration.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+TUVSTiBFLWNvbW1lcmNlPC90ZXh0Pgo8L3N2Zz4K",
-    tags: ["React", "Node.js", "MongoDB", "Express.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A Kanban-style task management application with drag-and-drop functionality and user authentication built with the MERN stack.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+VGFzayBNYW5hZ2VtZW50PC90ZXh0Pgo8L3N2Zz4K",
-    tags: ["React", "Node.js", "MongoDB", "Bootstrap"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "REST API for Blog Platform",
-    description:
-      "A RESTful API for a blog platform with user authentication, post creation, and comment functionality.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UkVTVCBBUEk8L3RleHQ+Cjwvc3ZnPgo=",
-    tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website showcasing projects and skills, built with modern web technologies.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZWM5ZWNlZiIvPgo8dGV4dCB4PSIzMDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjNDk1MDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UG9ydGZvbGlvIFdlYnNpdGU8L3RleHQ+Cjwvc3ZnPgo=",
-    tags: ["React", "Bootstrap", "Vite"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-];
-
-const ProjectCard = ({ project }) => {
+const Card = () => {
   return (
-    <div className="project-card card h-100 shadow-sm border rounded overflow-hidden position-relative" style={{ color: '#222', background: 'rgba(255,255,255,0.92)' }}>
-      <div className="position-relative overflow-hidden" style={{ height: "200px" }}>
-        <img
-          src={project.image}
-          alt={project.title}
-          className="card-img-top h-100 object-fit-cover"
-        />
-      </div>
-      <div className="card-body d-flex flex-column">
-        <h5 className="card-title fw-bold mb-2" style={{ color: '#1a237e' }}>{project.title}</h5>
-        <p className="card-text flex-grow-1 mb-3" style={{ color: '#333' }}>{project.description}</p>
-        <div className="mb-3">
-          {project.tags.map((tag, idx) => (
-            <span key={idx} className="badge project-tag me-2 mb-1" style={{ background: '#e3f2fd', color: '#1976d2' }}>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="d-flex gap-2">
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary btn-sm d-flex align-items-center gap-1 project-btn"
-            >
-              <ExternalLink size={16} /> Live Demo
+    <StyledWrapper>
+      <div className="card-container">
+        {/* CARD 1 */}
+        <div className="card">
+          <img
+            src="https://via.placeholder.com/350x200"
+            alt="Project screenshot"
+            className="card__image"
+          />
+          <div className="card__content">
+            <p className="card__title">Project Name</p>
+            <p className="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button">Live Demo</button>
             </a>
-          )}
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1 project-btn"
-            >
-              <Github size={16} /> Code
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button secondary">Source Code</button>
             </a>
-          )}
+          </div>
+        </div>
+
+        {/* Duplicate more cards below if needed */}
+        {/* CARD 2 */}
+        <div className="card">
+          <img
+            src="https://via.placeholder.com/350x200"
+            alt="Project screenshot"
+            className="card__image"
+          />
+          <div className="card__content">
+            <p className="card__title">Project Name</p>
+            <p className="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button">Live Demo</button>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button secondary">Source Code</button>
+            </a>
+          </div>
+        </div>
+         {/* CARD 3 */}
+         <div className="card">
+          <img
+            src="https://via.placeholder.com/350x200"
+            alt="Project screenshot"
+            className="card__image"
+          />
+          <div className="card__content">
+            <p className="card__title">Project Name</p>
+            <p className="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button">Live Demo</button>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button secondary">Source Code</button>
+            </a>
+          </div>
+        </div>
+         {/* CARD 4 */}
+         <div className="card">
+          <img
+            src="https://via.placeholder.com/350x200"
+            alt="Project screenshot"
+            className="card__image"
+          />
+          <div className="card__content">
+            <p className="card__title">Project Name</p>
+            <p className="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button">Live Demo</button>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <button className="card__button secondary">Source Code</button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </StyledWrapper>
   );
 };
 
-const ProjectsSection = () => {
-  return (
-    <section id="projects" className="projects-section position-relative" style={{ background: 'transparent', padding: 0 }}>
-      <div className="container">
-        <h2 className="mb-4 text-center" style={{ color: '#222' }}>My Projects</h2>
-        <div className="row g-4" style={{ margin: 0 }}>
-          {projects.map((project, idx) => (
-            <div key={idx} className="col-12 col-md-6 col-lg-6">
-              <ProjectCard project={project} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const StyledWrapper = styled.div`
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
 
-export default ProjectsSection;
+  .card {
+    position: relative;
+    width: 350px;
+    aspect-ratio: 16/9;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+
+  .card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+  }
+
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+
+  .card__title {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+  }
+
+  .card__description {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+  }
+
+  .card__button {
+    padding: 12px;
+    border-radius: 8px;
+    background: #777;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    width: fit-content;
+  }
+
+  .secondary {
+    background: transparent;
+    color: #777;
+    border: 1px solid #777;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 90%;
+    }
+  }
+`;
+
+export default Card;
