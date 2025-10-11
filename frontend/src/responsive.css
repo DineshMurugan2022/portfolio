@@ -1,0 +1,1153 @@
+/* Comprehensive Responsive Framework for All Devices */
+/* Mobile First Approach */
+
+/* Extra Small Devices (Phones, 576px and below) */
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .h4, h4 {
+    font-size: 1.25rem;
+  }
+  
+  .h5, h5 {
+    font-size: 1.125rem;
+  }
+  
+  .gap-3 {
+    gap: 1rem;
+  }
+  
+  .gap-4 {
+    gap: 1.5rem;
+  }
+  
+  .py-5 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .mb-5 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Small Devices (Tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1.125rem;
+  }
+  
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+  
+  .btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Medium Devices (Tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .display-4 {
+    font-size: 2.25rem;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* Large Devices (Desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .lead {
+    font-size: 1.375rem;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* XXL Devices (Extra Large Desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* TV Screens (Large Displays, 1800px and up) */
+@media (min-width: 1800px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+  
+  .display-4 {
+    font-size: 3rem;
+  }
+  
+  .lead {
+    font-size: 1.5rem;
+  }
+  
+  .btn-lg {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.375rem;
+  }
+}
+
+/* Ultra-Wide Screens (2000px and up) */
+@media (min-width: 2000px) {
+  html {
+    font-size: 20px;
+  }
+  
+  .container {
+    max-width: 1800px;
+  }
+  
+  .display-4 {
+    font-size: 3.5rem;
+  }
+  
+  .lead {
+    font-size: 1.75rem;
+  }
+}
+
+/* Responsive Utility Classes */
+.responsive-text-center {
+  text-align: center;
+}
+
+.responsive-text-left {
+  text-align: left;
+}
+
+.responsive-text-right {
+  text-align: right;
+}
+
+.responsive-flex-column {
+  flex-direction: column;
+}
+
+.responsive-flex-row {
+  flex-direction: row;
+}
+
+.responsive-align-items-start {
+  align-items: flex-start;
+}
+
+.responsive-align-items-center {
+  align-items: center;
+}
+
+.responsive-justify-content-start {
+  justify-content: flex-start;
+}
+
+.responsive-justify-content-center {
+  justify-content: center;
+}
+
+.responsive-justify-content-between {
+  justify-content: space-between;
+}
+
+.responsive-w-100 {
+  width: 100%;
+}
+
+.responsive-max-w-100 {
+  max-width: 100%;
+}
+
+.responsive-mb-3 {
+  margin-bottom: 1rem;
+}
+
+.responsive-mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.responsive-mb-5 {
+  margin-bottom: 3rem;
+}
+
+.responsive-p-3 {
+  padding: 1rem;
+}
+
+.responsive-p-4 {
+  padding: 1.5rem;
+}
+
+.responsive-p-5 {
+  padding: 3rem;
+}
+
+/* Responsive Grid System */
+.responsive-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.responsive-col {
+  flex: 1 0 0%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.responsive-col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.responsive-col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.responsive-col-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.responsive-col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+/* Responsive Visibility Classes */
+.responsive-d-none {
+  display: none;
+}
+
+.responsive-d-block {
+  display: block;
+}
+
+.responsive-d-flex {
+  display: flex;
+}
+
+.responsive-d-inline {
+  display: inline;
+}
+
+.responsive-d-inline-block {
+  display: inline-block;
+}
+
+/* Responsive Spacing Adjustments */
+@media (max-width: 575.98px) {
+  .responsive-text-center-sm {
+    text-align: center;
+  }
+  
+  .responsive-flex-column-sm {
+    flex-direction: column;
+  }
+  
+  .responsive-align-items-center-sm {
+    align-items: center;
+  }
+  
+  .responsive-justify-content-center-sm {
+    justify-content: center;
+  }
+  
+  .responsive-w-100-sm {
+    width: 100%;
+  }
+  
+  .responsive-mb-3-sm {
+    margin-bottom: 1rem;
+  }
+  
+  .responsive-p-3-sm {
+    padding: 1rem;
+  }
+  
+  .responsive-d-none-sm {
+    display: none;
+  }
+  
+  .responsive-d-block-sm {
+    display: block;
+  }
+  
+  .responsive-d-flex-sm {
+    display: flex;
+  }
+  
+  .responsive-col-12-sm {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .responsive-col-6-sm {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .responsive-text-center-md {
+    text-align: center;
+  }
+  
+  .responsive-flex-column-md {
+    flex-direction: column;
+  }
+  
+  .responsive-align-items-center-md {
+    align-items: center;
+  }
+  
+  .responsive-justify-content-center-md {
+    justify-content: center;
+  }
+  
+  .responsive-w-100-md {
+    width: 100%;
+  }
+  
+  .responsive-mb-3-md {
+    margin-bottom: 1rem;
+  }
+  
+  .responsive-p-3-md {
+    padding: 1rem;
+  }
+  
+  .responsive-d-none-md {
+    display: none;
+  }
+  
+  .responsive-d-block-md {
+    display: block;
+  }
+  
+  .responsive-d-flex-md {
+    display: flex;
+  }
+  
+  .responsive-col-12-md {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .responsive-col-6-md {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .responsive-text-center-lg {
+    text-align: center;
+  }
+  
+  .responsive-flex-column-lg {
+    flex-direction: column;
+  }
+  
+  .responsive-align-items-center-lg {
+    align-items: center;
+  }
+  
+  .responsive-justify-content-center-lg {
+    justify-content: center;
+  }
+  
+  .responsive-w-100-lg {
+    width: 100%;
+  }
+  
+  .responsive-mb-3-lg {
+    margin-bottom: 1rem;
+  }
+  
+  .responsive-p-3-lg {
+    padding: 1rem;
+  }
+  
+  .responsive-d-none-lg {
+    display: none;
+  }
+  
+  .responsive-d-block-lg {
+    display: block;
+  }
+  
+  .responsive-d-flex-lg {
+    display: flex;
+  }
+  
+  .responsive-col-12-lg {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .responsive-col-6-lg {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+/* Additional Responsive Utility Classes */
+.responsive-min-vh-100 {
+  min-height: 100vh;
+}
+
+.responsive-min-vh-75 {
+  min-height: 75vh;
+}
+
+.responsive-min-vh-50 {
+  min-height: 50vh;
+}
+
+.responsive-overflow-hidden {
+  overflow: hidden;
+}
+
+.responsive-position-relative {
+  position: relative;
+}
+
+.responsive-position-absolute {
+  position: absolute;
+}
+
+.responsive-z-index-1 {
+  z-index: 1;
+}
+
+.responsive-z-index-2 {
+  z-index: 2;
+}
+
+.responsive-z-index-3 {
+  z-index: 3;
+}
+
+/* Responsive Font Sizes */
+.responsive-font-size-small {
+  font-size: 0.875rem;
+}
+
+.responsive-font-size-medium {
+  font-size: 1rem;
+}
+
+.responsive-font-size-large {
+  font-size: 1.125rem;
+}
+
+.responsive-font-size-xl {
+  font-size: 1.25rem;
+}
+
+.responsive-font-size-xxl {
+  font-size: 1.5rem;
+}
+
+/* Responsive Padding Utilities */
+.responsive-padding-1 {
+  padding: 0.25rem;
+}
+
+.responsive-padding-2 {
+  padding: 0.5rem;
+}
+
+.responsive-padding-3 {
+  padding: 1rem;
+}
+
+.responsive-padding-4 {
+  padding: 1.5rem;
+}
+
+.responsive-padding-5 {
+  padding: 3rem;
+}
+
+/* Responsive Margin Utilities */
+.responsive-margin-1 {
+  margin: 0.25rem;
+}
+
+.responsive-margin-2 {
+  margin: 0.5rem;
+}
+
+.responsive-margin-3 {
+  margin: 1rem;
+}
+
+.responsive-margin-4 {
+  margin: 1.5rem;
+}
+
+.responsive-margin-5 {
+  margin: 3rem;
+}
+
+/* Responsive Border Radius */
+.responsive-rounded-sm {
+  border-radius: 0.25rem;
+}
+
+.responsive-rounded-md {
+  border-radius: 0.5rem;
+}
+
+.responsive-rounded-lg {
+  border-radius: 0.75rem;
+}
+
+.responsive-rounded-xl {
+  border-radius: 1rem;
+}
+
+.responsive-rounded-full {
+  border-radius: 9999px;
+}
+
+/* Responsive Shadow */
+.responsive-shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.responsive-shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.responsive-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.responsive-shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive Flexbox Utilities */
+.responsive-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.responsive-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.responsive-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.responsive-flex-direction-row {
+  flex-direction: row;
+}
+
+.responsive-flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.responsive-flex-direction-column {
+  flex-direction: column;
+}
+
+.responsive-flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.responsive-justify-content-start {
+  justify-content: flex-start;
+}
+
+.responsive-justify-content-end {
+  justify-content: flex-end;
+}
+
+.responsive-justify-content-center {
+  justify-content: center;
+}
+
+.responsive-justify-content-between {
+  justify-content: space-between;
+}
+
+.responsive-justify-content-around {
+  justify-content: space-around;
+}
+
+.responsive-justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.responsive-align-items-start {
+  align-items: flex-start;
+}
+
+.responsive-align-items-end {
+  align-items: flex-end;
+}
+
+.responsive-align-items-center {
+  align-items: center;
+}
+
+.responsive-align-items-baseline {
+  align-items: baseline;
+}
+
+.responsive-align-items-stretch {
+  align-items: stretch;
+}
+
+.responsive-align-content-start {
+  align-content: flex-start;
+}
+
+.responsive-align-content-end {
+  align-content: flex-end;
+}
+
+.responsive-align-content-center {
+  align-content: center;
+}
+
+.responsive-align-content-between {
+  align-content: space-between;
+}
+
+.responsive-align-content-around {
+  align-content: space-around;
+}
+
+.responsive-align-content-stretch {
+  align-content: stretch;
+}
+
+/* Responsive Display Utilities */
+.responsive-display-none {
+  display: none;
+}
+
+.responsive-display-block {
+  display: block;
+}
+
+.responsive-display-inline {
+  display: inline;
+}
+
+.responsive-display-inline-block {
+  display: inline-block;
+}
+
+.responsive-display-flex {
+  display: flex;
+}
+
+.responsive-display-inline-flex {
+  display: inline-flex;
+}
+
+.responsive-display-grid {
+  display: grid;
+}
+
+.responsive-display-inline-grid {
+  display: inline-grid;
+}
+
+/* Responsive Text Utilities */
+.responsive-text-left {
+  text-align: left;
+}
+
+.responsive-text-center {
+  text-align: center;
+}
+
+.responsive-text-right {
+  text-align: right;
+}
+
+.responsive-text-justify {
+  text-align: justify;
+}
+
+.responsive-text-uppercase {
+  text-transform: uppercase;
+}
+
+.responsive-text-lowercase {
+  text-transform: lowercase;
+}
+
+.responsive-text-capitalize {
+  text-transform: capitalize;
+}
+
+.responsive-text-normal {
+  text-transform: none;
+}
+
+/* Responsive Background Utilities */
+.responsive-bg-transparent {
+  background-color: transparent;
+}
+
+.responsive-bg-current {
+  background-color: currentColor;
+}
+
+/* Responsive Overflow Utilities */
+.responsive-overflow-auto {
+  overflow: auto;
+}
+
+.responsive-overflow-hidden {
+  overflow: hidden;
+}
+
+.responsive-overflow-visible {
+  overflow: visible;
+}
+
+.responsive-overflow-scroll {
+  overflow: scroll;
+}
+
+.responsive-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.responsive-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.responsive-overflow-x-visible {
+  overflow-x: visible;
+}
+
+.responsive-overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.responsive-overflow-y-auto {
+  overflow-y: auto;
+}
+
+.responsive-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.responsive-overflow-y-visible {
+  overflow-y: visible;
+}
+
+.responsive-overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+/* Responsive Position Utilities */
+.responsive-position-static {
+  position: static;
+}
+
+.responsive-position-fixed {
+  position: fixed;
+}
+
+.responsive-position-absolute {
+  position: absolute;
+}
+
+.responsive-position-relative {
+  position: relative;
+}
+
+.responsive-position-sticky {
+  position: sticky;
+}
+
+/* Responsive Width Utilities */
+.responsive-w-25 {
+  width: 25%;
+}
+
+.responsive-w-50 {
+  width: 50%;
+}
+
+.responsive-w-75 {
+  width: 75%;
+}
+
+.responsive-w-100 {
+  width: 100%;
+}
+
+.responsive-w-auto {
+  width: auto;
+}
+
+.responsive-max-w-xs {
+  max-width: 20rem;
+}
+
+.responsive-max-w-sm {
+  max-width: 24rem;
+}
+
+.responsive-max-w-md {
+  max-width: 28rem;
+}
+
+.responsive-max-w-lg {
+  max-width: 32rem;
+}
+
+.responsive-max-w-xl {
+  max-width: 36rem;
+}
+
+.responsive-max-w-2xl {
+  max-width: 42rem;
+}
+
+.responsive-max-w-3xl {
+  max-width: 48rem;
+}
+
+.responsive-max-w-4xl {
+  max-width: 56rem;
+}
+
+.responsive-max-w-5xl {
+  max-width: 64rem;
+}
+
+.responsive-max-w-6xl {
+  max-width: 72rem;
+}
+
+.responsive-max-w-full {
+  max-width: 100%;
+}
+
+.responsive-max-w-screen-sm {
+  max-width: 640px;
+}
+
+.responsive-max-w-screen-md {
+  max-width: 768px;
+}
+
+.responsive-max-w-screen-lg {
+  max-width: 1024px;
+}
+
+.responsive-max-w-screen-xl {
+  max-width: 1280px;
+}
+
+.responsive-max-w-screen-2xl {
+  max-width: 1536px;
+}
+
+/* Responsive Height Utilities */
+.responsive-h-25 {
+  height: 25%;
+}
+
+.responsive-h-50 {
+  height: 50%;
+}
+
+.responsive-h-75 {
+  height: 75%;
+}
+
+.responsive-h-100 {
+  height: 100%;
+}
+
+.responsive-h-auto {
+  height: auto;
+}
+
+.responsive-min-h-0 {
+  min-height: 0;
+}
+
+.responsive-min-h-full {
+  min-height: 100%;
+}
+
+.responsive-min-h-screen {
+  min-height: 100vh;
+}
+
+.responsive-max-h-full {
+  max-height: 100%;
+}
+
+.responsive-max-h-screen {
+  max-height: 100vh;
+}
+
+/* Enhanced Grid System for All Devices */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.col-1 {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+}
+
+.col-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.col-5 {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+}
+
+.col-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+
+.col-9 {
+  flex: 0 0 auto;
+  width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 auto;
+  width: 83.33333333%;
+}
+
+.col-11 {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+/* Responsive Grid Adjustments for Small Devices */
+@media (max-width: 575.98px) {
+  .row {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+  
+  .col {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  
+  .col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive Grid Adjustments for Medium Devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 50%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive Grid Adjustments for Large Devices */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsive Grid Adjustments for Extra Large Devices */
+@media (min-width: 1200px) {
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsive Grid Adjustments for TV Screens */
+@media (min-width: 1800px) {
+  .col-lg-4 {
+    margin-bottom: 2.5rem;
+  }
+  
+  .row {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  
+  .col {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* High Resolution Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .responsive-py-5 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .responsive-mb-5 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Portrait Orientation Adjustments */
+@media (orientation: portrait) {
+  .responsive-py-5 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .responsive-mb-5 {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,58 +1,136 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import "./AboutMeConnectors.css";
 
-const AboutSection = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const educationExperience = [
+  {
+    type: "education",
+    title: "Secondary Education",
+    period: "2017 - 2018",
+    details: "St Joseph's Higher Secondary School",
+    icon: <FaGraduationCap />,
+  },
+  {
+    type: "education",
+    title: "Higher Secondary",
+    period: "2018 - 2020",
+    details: "St Joseph's Higher Secondary School",
+    icon: <FaGraduationCap />,
+  },
+  {
+    type: "education",
+    title: "Engineering - Mechanical",
+    period: "",
+    details: "University College of Engineering, Arni",
+    icon: <FaGraduationCap />,
+  },
+  {
+    type: "experience",
+    title: "Web Designer Course",
+    period: "Nov 2024 - Jan 2025",
+    details: "MagicBus India Foundation, Chennai",
+    icon: <FaBriefcase />,
+  },
+    {
+    type: "experience",
+    title: "MERN stack developer",
+    period: "2025 - 2025(8 months)",
+    details: "B&Y Technologies ",
+    icon: <FaBriefcase />,
+  },
+];
+
+export default function AboutMeConnectors() {
+  const timelineRef = useRef([]);
+
+  useEffect(() => {
+    // Animate timeline line scaling
+    timelineRef.current.forEach((el) => {
+      const icon = el.querySelector(".timeline-icon");
+      const connector = el.querySelector(".timeline-connector");
+
+      // Animate item content
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        }
+      );
+
+      // Animate icon sliding
+      gsap.fromTo(
+        icon,
+        { x: -50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          delay: 0.1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        }
+      );
+
+      // Animate connector line from icon to timeline
+      gsap.fromTo(
+        connector,
+        { width: 0 },
+        {
+          width: 30,
+          duration: 0.8,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
-    <section id="about" className="about-section py-5 position-relative overflow-hidden">
-      <div className="container">
-        <h2 className="text-center mb-5">About Me</h2>
-        <div className="row align-items-center justify-content-center">
-          <div className="col-md-6 mb-4">
-            <div className="about-glass-card p-4 mb-4">
-              <p className="fs-5 mb-3">
-                Hello! I'm Dinesh, a passionate full-stack web developer with a strong foundation in both front-end and back-end technologies. I specialize in building responsive, user-friendly web applications using the MERN stack—MongoDB, Express.js, React, and Node.js. With a keen eye for design and a problem-solving mindset, I enjoy crafting elegant digital experiences that are not only functional but also intuitive. My journey in tech has been fueled by continuous learning and a deep commitment to writing clean, efficient code. I thrive in collaborative environments and am always eager to take on new challenges that push the boundaries of innovation and deliver real value to users.
-              </p>
-              <div className="pt-3">
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="btn btn-primary d-inline-flex align-items-center about-cv-btn"
-                >
-                  <i className="shake-vertical"></i>
-                  Download CV
-                </a>
-              </div>
+    <section id="about" className="about-connectors-section">
+      <div className="intro-panel">
+        <h1>
+          Hello, I'm <span className="highlight">Dinesh</span>
+        </h1>
+        <p>
+          I'm a passionate full-stack web developer with a strong foundation in both front-end and back-end technologies. I specialize in building responsive, user-friendly web applications using the MERN stack—MongoDB, Express.js, React, and Node.js. I thrive in collaborative environments and enjoy tackling new challenges.
+        </p>
+      </div>
+
+      <div className="timeline-panel">
+        <div className="timeline-line"></div>
+
+        {educationExperience.map((item, idx) => (
+          <div
+            key={idx}
+            className={`timeline-item ${item.type}`}
+            ref={(el) => (timelineRef.current[idx] = el)}
+          >
+            <div className="timeline-icon">{item.icon}</div>
+            <div className="timeline-connector"></div>
+            <div className="timeline-content">
+              <h4>{item.title}</h4>
+              {item.period && <span className="timeline-period">{item.period}</span>}
+              <p>{item.details}</p>
             </div>
           </div>
-          <div className="col-md-6 d-flex justify-content-center">
-            <div className="about-glass-card p-4 w-100" style={{ maxWidth: 370 }}>
-              <div className="mb-4">
-                <h3 className="h5"> Secondary Education</h3>
-                <p className="mb-1 fw-semibold">2017 - 2018</p>
-                <p className="text-muted">St joseph's higher secondary school</p>
-              </div>
-              <div className="mb-4">
-                <h3 className="h5">Higher Secondary</h3>
-                <p className="mb-1 fw-semibold">2018 - 2020</p>
-                <p className="text-muted">St joseph's higher secondary school</p>
-              </div>
-              <div className="mb-4">
-                <h3 className="h5">Engineering</h3>
-                <p className="mb-1 fw-semibold">Mechanical Engineering</p>
-                <p className="text-muted">University College of Engineering, Arni</p>
-              </div>
-              <div>
-                <h3 className="h5">Experience</h3>
-                <p className="mb-1 fw-semibold">Web Designer Course</p>
-                <p className="text-muted">
-                  MagicBus India Foundation, Chennai • November 2024 - January 2025
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default AboutSection;
+}

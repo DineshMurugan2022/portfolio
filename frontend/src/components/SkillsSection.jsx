@@ -1,48 +1,45 @@
-import React from "react";
-import "./SkillsSection.css";
+import React from 'react';
+import LogoLoop from './LogoLoop';
+import { SiReact, SiJavascript, SiNextdotjs, SiTypescript, SiGithub, SiVercel,  SiCss3, SiBootstrap,  SiHtml5, SiTailwindcss, SiPython, SiMongodb, SiNodedotjs, SiExpress } from 'react-icons/si';
 
-const SkillsSection = () => (
-  <div className="skills-wrapper">
-    <div className="container1">
-      {/* Skill items */}
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" />
+
+const SkillsSection = () => {
+  const techLogos = [
+    { node: <SiReact />, title: "React" },
+    { node: <SiNextdotjs />, title: "Next.js" },
+    { node: <SiNodedotjs />, title: "Node.js" },
+    { node: <SiExpress />, title: "Express" },
+    { node: <SiPython />, title: "Python" },
+    { node: <SiMongodb />, title: "MongoDB" },
+    { node: <SiTypescript />, title: "TypeScript" },
+    { node: <SiBootstrap />, title: "Bootstrap" },
+    { node: <SiHtml5 />, title: "HTML" },
+    { node: <SiTailwindcss />, title: "Tailwind CSS" },
+     { node: <SiJavascript />, title: "JavaScript" },
+     { node: <SiCss3 />, title: "CSS" },
+     { node: <SiGithub />, title: "GitHub" },
+     { node: <SiVercel />, title: "Vercel" },
+
+
+  ];
+
+  return (
+    <section id="skills" className="skills-wrapper">
+      <div className="container1">
+        <LogoLoop
+          logos={techLogos}
+          speed={80}
+          logoHeight={78}
+          gap={80}
+          pauseOnHover
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#010c15"
+          ariaLabel="Technology skills"
+        />
       </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" alt="GitHub" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" alt="Express.js" />
-      </div>
-      <div className="item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-      </div>
-    </div>
-  </div>
-);
+    </section>
+  );
+};
 
 export default SkillsSection;

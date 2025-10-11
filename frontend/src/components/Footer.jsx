@@ -41,7 +41,7 @@ const Footer = () => {
       <div className="container position-relative z-1">
         <div className="text-center mb-4">
           {/* Social Media Icons */}
-          <div className="d-flex justify-content-center gap-3 mb-4">
+          <div className="d-flex justify-content-center gap-3 mb-4 flex-wrap">
             {[
               { icon: "bi-github", url: "https://github.com" },
               { icon: "bi-linkedin", url: "https://linkedin.com" },
@@ -83,6 +83,60 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      {/* Responsive CSS */}
+      <style>{`
+        @media (max-width: 576px) {
+          .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+          }
+          
+          .gap-3 {
+            gap: 1rem;
+          }
+          
+          p {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem !important;
+          }
+        }
+        
+        @media (min-width: 576px) and (max-width: 768px) {
+          .py-5 {
+            padding-top: 2.5rem !important;
+            padding-bottom: 2.5rem !important;
+          }
+        }
+        
+        @media (min-width: 1200px) {
+          .py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+          }
+          
+          p {
+            font-size: 1rem;
+          }
+        }
+        
+        @media (min-width: 1800px) {
+          .py-5 {
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+          }
+          
+          p {
+            font-size: 1.125rem;
+            padding: 0.75rem 1.5rem !important;
+          }
+          
+          a {
+            width: 50px !important;
+            height: 50px !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 };

@@ -1,0 +1,260 @@
+.simple-parallax-container {
+.simple-parallax-container {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+  z-index: -100 !important;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+  transform: translateZ(0); /* Hardware acceleration */
+  pointer-events: none;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+.gradient-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bg-1 {
+  background: linear-gradient(45deg, 
+    rgba(30, 60, 114, 0.8) 0%, 
+    rgba(42, 82, 152, 0.6) 50%, 
+    rgba(74, 144, 226, 0.4) 100%);
+}
+
+.bg-2 {
+  background: linear-gradient(-45deg, 
+    rgba(147, 51, 234, 0.3) 0%, 
+    rgba(79, 70, 229, 0.4) 50%, 
+    rgba(59, 130, 246, 0.3) 100%);
+}
+
+.bg-3 {
+  background: linear-gradient(90deg, 
+    rgba(16, 185, 129, 0.2) 0%, 
+    rgba(5, 150, 105, 0.3) 50%, 
+    rgba(6, 78, 59, 0.2) 100%);
+}
+
+.floating-shape {
+  position: absolute;
+  opacity: 0.1;
+  will-change: transform;
+}
+
+.floating-shape.large {
+  width: 200px;
+  height: 200px;
+}
+
+.floating-shape.medium {
+  width: 120px;
+  height: 120px;
+}
+
+.floating-shape.small {
+  width: 60px;
+  height: 60px;
+}
+
+.circle {
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.layer-1 .circle.large {
+  top: 20%;
+  left: 15%;
+}
+
+.layer-2 .circle.small {
+  top: 70%;
+  right: 20%;
+}
+
+.square {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  transform: rotate(45deg);
+}
+
+.layer-2 .square.medium {
+  top: 30%;
+  left: 60%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.triangle.medium {
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 104px solid rgba(255, 107, 107, 0.3);
+}
+
+.layer-1 .triangle.medium {
+  top: 60%;
+  right: 25%;
+}
+
+.hexagon {
+  background: linear-gradient(45deg, #f093fb, #f5576c);
+  position: relative;
+}
+
+.hexagon.small {
+  width: 60px;
+  height: 34.64px;
+}
+
+.hexagon.small:before,
+.hexagon.small:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+.hexagon.small:before {
+  bottom: 100%;
+  border-bottom: 17.32px solid #f093fb;
+}
+
+.hexagon.small:after {
+  top: 100%;
+  border-top: 17.32px solid #f5576c;
+}
+
+.layer-2 .hexagon.small {
+  top: 15%;
+  left: 25%;
+}
+
+.diamond {
+  background: linear-gradient(45deg, #a8edea, #fed6e3);
+  transform: rotate(45deg);
+}
+
+.layer-3 .diamond.small {
+  top: 40%;
+  left: 80%;
+}
+
+.pentagon {
+  background: linear-gradient(45deg, #ffecd2, #fcb69f);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.layer-3 .pentagon.medium {
+  top: 25%;
+  right: 40%;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridFloat 25s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes gridFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .floating-shape.large {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .floating-shape.medium {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .floating-shape.small {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .triangle.medium {
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 69px solid rgba(255, 107, 107, 0.3);
+  }
+  
+  .grid-pattern {
+    background-size: 40px 40px;
+  }
+}
+
+/* Performance optimizations */
+.parallax-layer,
+.floating-shape,
+.particle {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+

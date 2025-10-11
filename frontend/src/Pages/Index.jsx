@@ -5,14 +5,14 @@ import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import Lightning from "../components/Lightning";
+
 
 const Index = () => {
   return (
     <>
       <Navbar />
-      <main className="position-relative" style={{ zIndex: 10 }}>
-        <Lightning />
+      <main className="position-relative" style={{ zIndex: 1, background: 'transparent' }}>
+        
         <HeroSection />
         <AboutSection />
         <SkillsSection />

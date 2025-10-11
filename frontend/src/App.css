@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -35,10 +35,11 @@
 
 .card {
   padding: 2em;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 
 .read-the-docs {
-  color: #888;
+  color: #a1c2bd; /* Muted teal from project palette */
 }
 
 /* Hero Section Animated Gradient Background */
@@ -49,6 +50,7 @@
   position: relative;
   background: transparent;
   overflow: hidden;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .hero-bg-gradient {
   position: absolute;
@@ -80,21 +82,21 @@
   50% { opacity: 0; }
 }
 
-
-
 /* About Section Glassmorphism Card */
 .about-section {
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #19183b 0%, #010c15 100%);
   position: relative;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .about-glass-card {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(25, 24, 59, 0.55);
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: box-shadow 0.3s, transform 0.3s;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .about-glass-card:hover {
   box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.18);
@@ -103,7 +105,7 @@
 .about-cv-btn {
   background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
   border: none;
-  color: #fff;
+  color: #e7f2ef; /* Light mint from project palette */
   box-shadow: 0 2px 8px 0 rgba(80, 80, 255, 0.10);
   transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
 }
@@ -111,22 +113,24 @@
   background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
   box-shadow: 0 4px 16px 0 rgba(80, 80, 255, 0.18);
   transform: scale(1.04);
-  color: #fff;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 
 /* Skills Section */
 
-
 /* Projects Section */
 .projects-section {
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  background: linear-gradient(120deg, #19183b 0%, #010c15 100%);
   position: relative;
+  color: #e7f2ef; /* Light mint from project palette */
+  padding: 2rem 0;
 }
 .project-card {
-  background: rgba(255,255,255,0.92);
+  background: rgba(25, 24, 59, 0.92);
   border-radius: 1.25rem;
   box-shadow: 0 4px 18px 0 rgba(31, 38, 135, 0.10);
   transition: box-shadow 0.3s, transform 0.3s;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .project-card:hover {
   box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.18);
@@ -134,7 +138,7 @@
 }
 .project-tag {
   background: linear-gradient(90deg, #6a11cb22 0%, #2575fc22 100%);
-  color: #2575fc;
+  color: #a1c2bd; /* Muted teal from project palette */
   font-weight: 500;
   margin-bottom: 4px;
   box-shadow: 0 2px 8px 0 rgba(80, 80, 255, 0.08);
@@ -142,31 +146,39 @@
 }
 .project-tag:hover, .project-tag:focus {
   background: linear-gradient(90deg, #6a11cb33 0%, #2575fc33 100%);
-  color: #6a11cb;
+  color: #e7f2ef; /* Light mint from project palette */
   transform: scale(1.12);
 }
 .project-btn {
   transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
   box-shadow: 0 2px 8px 0 rgba(80, 80, 255, 0.08);
+  background-color: #19183b; /* Dark navy blue from project palette */
+  color: #e7f2ef; /* Light mint from project palette */
+  border-color: #19183b; /* Dark navy blue from project palette */
 }
 .project-btn:hover, .project-btn:focus {
   box-shadow: 0 4px 16px 0 rgba(80, 80, 255, 0.18);
   transform: scale(1.08);
+  background-color: #19183b; /* Dark navy blue from project palette */
+  color: #e7f2ef; /* Light mint from project palette */
+  border-color: #19183b; /* Dark navy blue from project palette */
 }
 
 /* Contact Section Glassmorphism Card */
 .contact-section {
-  background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+  background: linear-gradient(120deg, #010c15 0%, #19183b 100%);
   position: relative;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .contact-glass-card {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(25, 24, 59, 0.65);
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: box-shadow 0.3s, transform 0.3s;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .contact-glass-card:hover {
   box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.18);
@@ -177,7 +189,7 @@
   overflow: hidden;
   background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
   border: none;
-  color: #fff;
+  color: #e7f2ef; /* Light mint from project palette */
   font-weight: 600;
   box-shadow: 0 2px 8px 0 rgba(80, 80, 255, 0.10);
   transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
@@ -186,7 +198,7 @@
   background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
   box-shadow: 0 4px 16px 0 rgba(80, 80, 255, 0.18);
   transform: scale(1.04);
-  color: #fff;
+  color: #e7f2ef; /* Light mint from project palette */
 }
 .contact-btn .ripple {
   position: absolute;
@@ -295,6 +307,10 @@
   .pt-navbar-fix {
     padding-top: 56px;
   }
+  
+  #root {
+    padding: 0.5rem;
+  }
 }
 
 /* Hero button group alignment */
@@ -305,7 +321,7 @@
 @media (max-width: 767.98px) {
   .hero-btn-group {
     justify-content: center;
-    margin-left: 10rem;
+    margin-left: 0;
   }
 }
 
@@ -349,7 +365,7 @@
   box-shadow: 1px 1px rgba(107, 221, 215, 0.37);
   padding: 5px 10px;
   background-color: rgb(59, 190, 230);
-  color: #fff;
+  color: #e7f2ef; /* Light mint from project palette */
   font-family: Roboto, sans-serif;
   font-weight: 505;
   font-size: 16px;
@@ -422,3 +438,86 @@
   }
 }
 
+/* Projects Grid Responsive Adjustments */
+.projects-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projects-section .col-12 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments for small devices */
+@media (max-width: 575.98px) {
+  #root {
+    padding: 0.5rem;
+  }
+  
+  .projects-section {
+    padding: 1rem 0;
+  }
+  
+  .projects-section .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .projects-section .row {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+  
+  .projects-section .col-12 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive adjustments for medium devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .projects-section .col-sm-6 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive adjustments for large devices */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #root {
+    padding: 1.5rem;
+  }
+  
+  .projects-section .col-lg-4 {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsive adjustments for extra large devices */
+@media (min-width: 1200px) {
+  #root {
+    padding: 2rem;
+    max-width: 1400px;
+  }
+}
+
+/* Responsive adjustments for TV screens */
+@media (min-width: 1800px) {
+  #root {
+    padding: 3rem;
+    max-width: 1600px;
+  }
+  
+  .projects-section {
+    padding: 3rem 0;
+  }
+  
+  .projects-section .col-lg-4 {
+    margin-bottom: 2.5rem;
+  }
+}

@@ -1,0 +1,48 @@
+/* Card component styles */
+.border-glow {
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+/* Color variables for tech gradients */
+:root {
+  --tech-cyan: #00b4d8;
+  --tech-purple: #9d4edd;
+  --tech-green: #2ec4b6;
+  --tech-orange: #ff9f1c;
+  --primary: #646cff;
+  --secondary: #535bf2;
+  --accent: #bd34fe;
+  /* Project palette colors */
+  --dark-navy: #19183b;
+  --muted-blue-gray: #708993;
+  --muted-teal: #a1c2bd;
+  --light-mint: #e7f2ef;
+}
+
+/* Gradient text */
+.tech-gradient {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text colors using project palette */
+.text-light-mint {
+  color: var(--light-mint);
+}
+
+.text-muted-teal {
+  color: var(--muted-teal);
+}
+
+.text-muted-blue-gray {
+  color: var(--muted-blue-gray);
+}
+
+.bg-dark-navy {
+  background-color: var(--dark-navy);
+}

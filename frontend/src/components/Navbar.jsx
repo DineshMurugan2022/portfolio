@@ -27,32 +27,38 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed-top transition-all ${
-        scrolled ? 'bg-white shadow-sm' : 'bg-transparent text-dark'
+      className={`fixed-top transition-all duration-300 ${
+        scrolled 
+          ? 'bg-[#19183b] shadow-lg' // dark navy blue from project palette
+          : 'bg-transparent'
       }`}
     >
       <div className="container py-3 d-flex align-items-center justify-content-between">
         {/* Logo */}
         <a
           href="#home"
-          className={`fs-4 fw-bold text-decoration-none text-danger`}
+          className={`fs-4 fw-bold text-decoration-none ${
+            scrolled ? 'text-[#e7f2ef]' : 'text-[#e7f2ef]'
+          }`}
         >
           Portfolio
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="d-none d-md-flex gap-4">
+        <nav className="d-none d-lg-flex gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="position-relative fw-medium text-decoration-none px-2 py-1 nav-link text-dark"
+              className={`position-relative fw-medium text-decoration-none px-2 py-1 nav-link ${
+                scrolled ? 'text-[#e7f2ef]' : 'text-[#e7f2ef]'
+              }`}
               style={{
                 transition: 'color 0.3s',
                 borderBottom: '2px solid transparent',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#0d6efd';
+                e.currentTarget.style.borderBottomColor = '#a1c2bd'; // muted teal
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderBottomColor = 'transparent';
@@ -67,7 +73,11 @@ const Navbar = () => {
         <div className="d-flex align-items-center gap-2">
           {/* Mobile Menu Toggle */}
           <button
-            className="btn btn-outline-primary d-md-none"
+            className={`btn d-lg-none ${
+              scrolled 
+                ? 'btn-outline-light text-[#e7f2ef] border-[#a1c2bd]' 
+                : 'btn-outline-light text-[#e7f2ef] border-[#e7f2ef]'
+            }`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -88,13 +98,13 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="shadow d-md-none bg-white text-dark">
+        <div className="shadow d-lg-none bg-[#19183b] text-[#e7f2ef]">
           <div className="container d-flex flex-column py-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="fw-medium py-2 text-decoration-none text-dark"
+                className="fw-medium py-2 text-decoration-none text-[#e7f2ef] hover:text-[#a1c2bd]"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

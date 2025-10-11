@@ -88,13 +88,17 @@ const HeroSection = () => {
     <section
       id="home"
       className="hero-section position-relative overflow-hidden"
-      style={{ paddingTop: "100px", paddingBottom: "80px" }}
+      style={{ 
+        paddingTop: "100px", 
+        paddingBottom: "80px",
+        background: "transparent"
+      }}
     >
-      <div className="container position-relative" style={{ zIndex: 2 }}>
+      <div className="container position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center">
           {/* Text Section */}
-          <div className="col-md-6 text-center text-md-start mb-5 mb-md-0">
-            <p className="text-primary fw-semibold mb-2">Hello, I'm</p>
+          <div className="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+            <p className="text-primary fw-semibold mb-2" style={{ color: '#a1c2bd' }}>Hello, I'm</p>
             <h1
               className="display-4 fw-bold mb-3"
               style={{
@@ -105,19 +109,26 @@ const HeroSection = () => {
             >
               Dinesh. M
             </h1>
-            <p className="lead text-muted mb-3">
+            <p className="lead text-muted mb-3" style={{ color: '#a1c2bd' }}>
               <span className="me-2">A passionate</span>
-              <span className="text-primary fw-bold">
+              <span className="text-primary fw-bold" style={{ color: '#e7f2ef' }}>
                 <Typewriter words={roles} />
               </span>
             </p>
 
             {/* Buttons */}
-            <div className="d-flex flex-column flex-sm-row gap-3 mt-4 hero-btn-group">
-              <a href="#projects" className="btn btn-primary btn-lg">
+            <div className="d-flex flex-column flex-sm-row gap-3 mt-4 justify-content-center justify-content-lg-start">
+              <a href="#projects" className="btn btn-primary btn-lg" style={{ 
+                backgroundColor: '#19183b', 
+                borderColor: '#19183b',
+                color: '#e7f2ef'
+              }}>
                 View My Work
               </a>
-              <a href="#contact" className="btn btn-outline-primary btn-lg">
+              <a href="#contact" className="btn btn-outline-primary btn-lg" style={{ 
+                borderColor: '#19183b',
+                color: '#e7f2ef'
+              }}>
                 Contact Me
               </a>
             </div>
@@ -125,7 +136,7 @@ const HeroSection = () => {
 
           {/* Profile Image Section */}
           <div
-            className="col-md-6 d-flex justify-content-md-end justify-content-center"
+            className="col-lg-6 d-flex justify-content-center justify-content-lg-end"
             ref={containerRef}
           >
             <ProfileCard

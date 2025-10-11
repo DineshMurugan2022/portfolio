@@ -1,0 +1,239 @@
+/* Card Beam Animation Styles */
+.card-beam-container {
+  --primary-color: 0, 255, 255;
+  --secondary-color: 255, 255, 255;
+  background: radial-gradient(ellipse at center, #0f1419 0%, #000 70%) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -10 !important;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.beam-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
+    linear-gradient(-45deg, rgba(255, 0, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(0, 100, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 100, 0, 0.1) 0%, transparent 50%);
+  animation: backgroundShift 10s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes backgroundShift {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.8;
+  }
+}
+
+/* Animated Cards */
+.beam-card {
+  position: absolute;
+  background: rgba(var(--primary-color), 0.1);
+  border: 1px solid rgba(var(--primary-color), 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(var(--primary-color), 0.8);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 20px rgba(var(--primary-color), 0.2),
+    inset 0 0 20px rgba(var(--primary-color), 0.05);
+  animation: cardFloat 4s linear infinite;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(50px) rotate(5deg) scale(1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(10deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+/* Glowing Beams */
+.glow-beam {
+  position: absolute;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 255, 255, 0.8) 80%,
+    transparent 100%
+  );
+  box-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(0, 255, 255, 0.1);
+  animation: beamSlide 2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes beamSlide {
+  0% {
+    transform: translateY(100vh) rotate(var(--rotation, 0deg)) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(90vh) rotate(var(--rotation, 0deg)) scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-10vh) rotate(var(--rotation, 0deg)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(var(--rotation, 0deg)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(var(--primary-color), 0.6);
+  border-radius: 50%;
+  animation: particleFloat 6s linear infinite;
+  box-shadow: 0 0 6px rgba(var(--primary-color), 0.4);
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Enhanced effects for different screen sizes */
+@media (max-width: 768px) {
+  .beam-card {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+  
+  .glow-beam {
+    width: 1px;
+    height: 150px;
+  }
+  
+  .particle {
+    width: 1px;
+    height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .beam-card {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+  
+  .glow-beam {
+    height: 100px;
+  }
+}
+
+/* Additional glow effects */
+.beam-card:nth-child(odd) {
+  border-color: rgba(255, 0, 255, 0.3);
+  color: rgba(255, 0, 255, 0.8);
+  box-shadow: 
+    0 0 20px rgba(255, 0, 255, 0.2),
+    inset 0 0 20px rgba(255, 0, 255, 0.05);
+}
+
+.beam-card:nth-child(3n) {
+  border-color: rgba(255, 255, 0, 0.3);
+  color: rgba(255, 255, 0, 0.8);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 0, 0.05);
+}
+
+/* Performance optimizations */
+.card-beam-container,
+.beam-card,
+.glow-beam,
+.particle {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Subtle grid overlay */
+.card-beam-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
