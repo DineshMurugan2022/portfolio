@@ -4,6 +4,10 @@ import { Button } from "./ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import ecartImage from '../assets/ecart.png';
 import gymimage from '../assets/gym.png';
+import portfolioimage from '../assets/portfolio.png'
+import chatbotimage from '../assets/chatbot.PNG'
+import crmimage from '../assets/crm.PNG'
+import paymentimage from '../assets/payment.PNG'
 
 const projects = [
   {
@@ -29,7 +33,7 @@ const projects = [
   {
     title: "AI Chatbot Application",
     description: "Interactive chatbot powered by Gemini API, providing intelligent responses and conversation capabilities for enhanced user engagement.",
-    image: "🤖",
+    image: chatbotimage,
     tech: ["React", "Gemini API", "JavaScript", "AI Integration", "Chat UI"],
     github: "https://github.com/DineshMurugan2022",
     live: "http://chatbot-cyan-iota.vercel.app",
@@ -39,7 +43,7 @@ const projects = [
   {
     title: "CRM Customer Relationship Management",
     description: "Secure login and signup application with JWT token-based authentication, user session management, and protected routes (Use username: admin and password: admin123456789).",
-    image: "🔐",
+    image: crmimage,
     tech: ["React", "Node.js", "JWT", "Express", "Authentication"],
     github: "https://github.com/DineshMurugan2022",
     live: "http://nothing-nine-neon.vercel.app",
@@ -49,7 +53,7 @@ const projects = [
   {
     title: "Personal Portfolio Website",
     description: "Responsive portfolio showcasing web development skills, projects, and experience with modern design and smooth animations.",
-    image: "💼",
+    image:portfolioimage ,
     tech: ["React", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
     github: "https://github.com/DineshMurugan2022",
     live: "https://portfolio-seven-iota-q49tq1tb5z.vercel.app/",
@@ -59,10 +63,10 @@ const projects = [
   {
     title: "Payment Gateway Integration",
     description: "E-commerce payment system integrated with Razorpay API for secure online transactions and payment processing.",
-    image: "💳",
+    image: paymentimage,
     tech: ["React", "Node.js", "Razorpay API", "Payment Gateway", "Express"],
     github: "https://github.com/DineshMurugan2022",
-    live: "https://github.com/DineshMurugan2022",
+    live: "https://payment-liart-zeta.vercel.app/",
     gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
     category: "Fintech"
   }
