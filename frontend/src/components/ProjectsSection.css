@@ -1,0 +1,323 @@
+/* Projects Section Variables */
+:root {
+    --project-card-bg: rgba(23, 25, 35, 0.7);
+    --project-card-border: rgba(255, 255, 255, 0.08);
+    --project-primary: #3b82f6;
+    --project-secondary: #8b5cf6;
+    --project-text-muted: #94a3b8;
+    --project-text-light: #f8fafc;
+}
+
+.projects-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 6rem 0;
+    background: transparent;
+    /* Assuming global background handles site bg */
+}
+
+/* Container */
+.projects-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.projects-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--project-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+    perspective: 1000px;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Individual Card Styling */
+.project-card-wrapper {
+    height: 100%;
+}
+
+.card-inner {
+    background: var(--project-card-bg);
+    border: 1px solid var(--project-card-border);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-inner:hover,
+.card-inner.is-live {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-container {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #0f172a;
+    /* Fallback for transparency */
+}
+
+/* Inline Iframe */
+.iframe-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.live-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+    /* Ensure iframe content has background */
+}
+
+.iframe-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f1115;
+    z-index: 10;
+}
+
+.live-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #10b981;
+    padding: 4px 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    z-index: 20;
+}
+
+.pulsing-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+
+    70% {
+        opacity: 0.7;
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-inner:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-inner:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--project-text-muted);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--project-text-light);
+    margin-bottom: 0.75rem;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--project-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Actions */
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.btn-action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-preview {
+    background: linear-gradient(135deg, var(--project-primary), var(--project-secondary));
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-preview:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.btn-stop {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn-stop:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.btn-github {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--project-text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-github:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .projects-container {
+        width: 95%;
+    }
+
+    .card-content {
+        padding: 1.25rem;
+    }
+}

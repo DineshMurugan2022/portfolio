@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,6 +11,8 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,12 +22,32 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setShowToast(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-      setTimeout(() => setShowToast(false), 4000);
-    }, 1500);
+
+    // TODO: Replace with your actual EmailJS credentials
+    // You can get them from https://dashboard.emailjs.com/admin
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then((result) => {
+        setToastMessage("Message sent! Thank you for your message. I'll get back to you soon!");
+        setIsError(false);
+        setShowToast(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
+        setTimeout(() => setShowToast(false), 5000);
+      }, (error) => {
+        console.error(error.text);
+        setToastMessage("Failed to send message. Please try again later or email me directly.");
+        setIsError(true);
+        setShowToast(true);
+
+        setTimeout(() => setShowToast(false), 5000);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -63,7 +87,7 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <form onSubmit={handleSubmit} className="contact-glass-card p-4 rounded shadow-sm border position-relative">
+            <form ref={formRef} onSubmit={handleSubmit} className="contact-glass-card p-4 rounded shadow-sm border position-relative">
               <div className="row mb-3">
                 <div className="col-md-6 mb-3 mb-md-0">
                   <label htmlFor="name" className="form-label" style={{ color: '#e7f2ef' }}>Your Name</label>
@@ -76,7 +100,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="John Doe"
                     required
-                    style={{ 
+                    style={{
                       backgroundColor: 'rgba(25, 24, 59, 0.3)',
                       color: '#e7f2ef',
                       borderColor: 'rgba(161, 194, 189, 0.3)'
@@ -94,7 +118,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="john@example.com"
                     required
-                    style={{ 
+                    style={{
                       backgroundColor: 'rgba(25, 24, 59, 0.3)',
                       color: '#e7f2ef',
                       borderColor: 'rgba(161, 194, 189, 0.3)'
@@ -113,7 +137,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Project Inquiry"
                   required
-                  style={{ 
+                  style={{
                     backgroundColor: 'rgba(25, 24, 59, 0.3)',
                     color: '#e7f2ef',
                     borderColor: 'rgba(161, 194, 189, 0.3)'
@@ -131,14 +155,14 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Your message here..."
                   required
-                  style={{ 
+                  style={{
                     backgroundColor: 'rgba(25, 24, 59, 0.3)',
                     color: '#e7f2ef',
                     borderColor: 'rgba(161, 194, 189, 0.3)'
                   }}
                 />
               </div>
-              <button type="submit" className="btn contact-btn w-100" disabled={isSubmitting} style={{ 
+              <button type="submit" className="btn contact-btn w-100" disabled={isSubmitting} style={{
                 background: 'linear-gradient(135deg, #19183b 0%, #708993 100%)',
                 borderColor: '#19183b',
                 color: '#e7f2ef'
@@ -147,12 +171,12 @@ const ContactSection = () => {
                 <span className="ripple"></span>
               </button>
               {showToast && (
-                <div className="alert alert-success mt-3 mb-0" role="alert" style={{ 
+                <div className={`alert ${isError ? 'alert-danger' : 'alert-success'} mt-3 mb-0`} role="alert" style={{
                   backgroundColor: 'rgba(25, 24, 59, 0.7)',
-                  color: '#e7f2ef',
+                  color: isError ? '#ff6b6b' : '#e7f2ef',
                   borderColor: 'rgba(161, 194, 189, 0.3)'
                 }}>
-                  Message sent! Thank you for your message. I'll get back to you soon!
+                  {toastMessage}
                 </div>
               )}
             </form>

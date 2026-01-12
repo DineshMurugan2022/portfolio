@@ -1,277 +1,127 @@
+/* Skills Section Theme */
 :root {
-  --body-color: #010c15;
-  --text-color: #e7f2ef; /* Changed to light mint from project palette */
-  --primary-color: #19183b; /* Changed to dark navy blue from project palette */
-  --secondary-color: #ff7b00;
-
-  color-scheme: dark;
+  --skill-sphere-size: 500px;
 }
 
-*,
-*:before,
-*:after {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* body,
-html {
-  height: 100%;
-} */
-
-/* Center the skills section */
-.container1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-/* Outer container centers everything */
-.body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Full viewport height */
-  color: var(--text-color);
-  background-color: var(--body-color);
-  overflow: hidden;
-}
-
-.container1  {
-  --size: 120px;
-  --offset: 30px;
-  --duration: 30s;
-
+.skills-section {
   position: relative;
-  aspect-ratio: 1 / 1;
-  pointer-events: none;
-  display: inline-grid;
-  border-radius: 9999px;
-  width: calc(var(--size) * 3);
-  border: 6px solid var(--primary-color);
-  transition: box-shadow 0.3s ease-in-out;
-  animation: spin-out var(--duration) linear infinite;
-
-  & .item {
-    z-index: 1;
-    display: flex;
-    grid-area: 1 / 1;
-    width: var(--size);
-    aspect-ratio: 1 / 1;
-    pointer-events: auto;
-    border-radius: 9999px;
-    animation: spin-in var(--duration) linear infinite reverse;
-    offset: circle(
-        calc(var(--size) / (2 * sin(0.5turn / sibling-count())) + var(--offset))
-      )
-      calc(100% * sibling-index() / sibling-count()) 0deg;
-    color: var(--text-color); /* Added text color for items */
-
-    & img {
-      width: inherit;
-      height: inherit;
-      pointer-events: auto;
-      border-radius: 9999px;
-      border: 3px solid var(--primary-color);
-
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out;
-      transition-property: box-shadow, scale, border;
-    }
-
-    &:hover {
-      z-index: 2;
-
-      & img {
-        scale: 1.5;
-        border-color: var(--secondary-color);
-        box-shadow: 0 0 1rem var(--secondary-color);
-      }
-
-      & ~ * img {
-        scale: 0.6;
-      }
-    }
-
-    &:has(~ *:hover) img {
-      scale: 0.6;
-    }
-  }
-
-  &::before {
-    content: "";
-    z-index: -1;
-    border: inherit;
-    position: absolute;
-    width: var(--size);
-    aspect-ratio: 1 / 1;
-    border-radius: 0.25rem;
-
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    transform: translate(-50%, -50%);
-
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-    transition-property: transform, border-radius, border, box-shadow;
-  }
-
-  &::after {
-    content: "";
-    z-index: -1;
-    inset: -6px;
-    width: inherit;
-    height: inherit;
-    border: inherit;
-    position: absolute;
-    border-radius: inherit;
-    animation: spin-in var(--duration) linear infinite reverse;
-
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-    transition-property: scale, border-radius, border, box-shadow;
-  }
-
-  &:has(.item:hover) {
-    animation-play-state: paused;
-    box-shadow: 0 0 60px 12px var(--primary-color) inset,
-      0 0 21px 15px var(--body-color);
-
-    & .item {
-      animation-play-state: paused;
-    }
-
-    &::before {
-      --scale: 4;
-      --translate: calc(-50% / var(--scale));
-
-      border-width: 2px;
-      border-radius: inherit;
-      border-color: var(--secondary-color);
-      transform: scale(var(--scale))
-        translate(var(--translate), var(--translate));
-      box-shadow: 0 0 15px var(--secondary-color),
-        0 0 15px var(--primary-color) inset;
-    }
-
-    &::after {
-      scale: 0.3;
-      border-width: 18px;
-      border-radius: 3rem;
-      border-color: var(--secondary-color);
-      box-shadow: 0 0 var(--size) var(--secondary-color) inset;
-    }
-  }
-}
-
-@keyframes spin-out {
-  from {
-    rotate: 0;
-  }
-
-  to {
-    rotate: 360deg;
-  }
-}
-
-@keyframes spin-in {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.skills-wrapper {
+  min-height: 100vh;
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: var(--text-color); /* Added text color for wrapper */
+  justify-content: center;
+  overflow: hidden;
+  padding: 6rem 0;
 }
 
-/* Responsive adjustments for tablets */
-@media (max-width: 991.98px) {
-  .container1 {
-    --size: 100px;
-    --offset: 25px;
-  }
-  
-  .skills-wrapper {
-    height: 80vh;
-  }
+.skills-container {
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Responsive adjustments for mobile phones */
+.sphere-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  /* Essential for 3D effect */
+}
+
+.tag-cloud-scene {
+  position: relative;
+  width: var(--skill-sphere-size);
+  height: var(--skill-sphere-size);
+  transform-style: preserve-3d;
+}
+
+.tag-cloud-sphere {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Individual Tag Item */
+.tag-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform-origin: 0 0;
+  /* Center of the element */
+}
+
+/* This counter-rotates the content so it mostly faces forward, 
+   though fully facing camera requires more complex JS math. 
+   For now, we let them spin with the globe for true 3D feel. */
+.tag-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(23, 25, 35, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  /* Ensure the item is centered on its coordinate */
+  transform: translate(-50%, -50%);
+}
+
+.tag-content:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 100;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+.tag-icon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .container1 {
-    --size: 80px;
-    --offset: 20px;
-    --duration: 25s;
+  :root {
+    --skill-sphere-size: 320px;
   }
-  
-  .skills-wrapper {
-    height: 70vh;
-  }
-  
-  .body {
-    height: 90vh;
-  }
-}
 
-/* Responsive adjustments for small mobile phones */
-@media (max-width: 576px) {
-  .container1 {
-    --size: 60px;
-    --offset: 15px;
-    --duration: 20s;
+  .sphere-wrapper {
+    height: 400px;
   }
-  
-  .skills-wrapper {
-    height: 60vh;
-  }
-  
-  .body {
-    height: 80vh;
-  }
-}
 
-/* Responsive adjustments for large screens and TVs */
-@media (min-width: 1200px) {
-  .container1 {
-    --size: 140px;
-    --offset: 35px;
-    --duration: 35s;
+  .tag-content {
+    padding: 8px 12px;
   }
-  
-  .skills-wrapper {
-    height: 110vh;
-  }
-}
 
-/* Responsive adjustments for extra large screens and TVs */
-@media (min-width: 1800px) {
-  .container1 {
-    --size: 160px;
-    --offset: 40px;
-    --duration: 40s;
+  .tag-icon {
+    font-size: 1.5rem;
   }
-  
-  .skills-wrapper {
-    height: 120vh;
-  }
-  
-  .body {
-    height: 110vh;
+
+  .tag-name {
+    font-size: 0.75rem;
   }
 }

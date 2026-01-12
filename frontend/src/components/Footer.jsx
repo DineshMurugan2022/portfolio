@@ -43,9 +43,9 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="d-flex justify-content-center gap-3 mb-4 flex-wrap">
             {[
-              { icon: "bi-github", url: "https://github.com" },
-              { icon: "bi-linkedin", url: "https://linkedin.com" },
-              { icon: "bi-twitter", url: "https://twitter.com" }
+              { icon: "bi-github", url: "https://github.com/DineshMurugan2022" },
+              { icon: "bi-linkedin", url: "https://www.linkedin.com/in/dinesh-m-9483240703/" },
+              { icon: "bi-twitter", url: "https://x.com/DineshMurugan20" }
             ].map((social, index) => (
               <a
                 key={index}
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Responsive CSS */}
       <style>{`
         @media (max-width: 576px) {

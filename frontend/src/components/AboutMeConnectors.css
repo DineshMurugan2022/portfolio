@@ -11,6 +11,7 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Left Panel */
@@ -128,50 +129,51 @@
     flex-direction: column;
     padding: 3rem 5%;
   }
-  
-  .intro-panel, .timeline-panel {
+
+  .intro-panel,
+  .timeline-panel {
     width: 100%;
   }
-  
+
   .intro-panel {
     margin-bottom: 3rem;
   }
-  
+
   .intro-panel h1 {
     font-size: 2.2rem;
     text-align: center;
   }
-  
+
   .intro-panel p {
     font-size: 0.95rem;
     text-align: center;
   }
-  
+
   .timeline-panel {
     padding-left: 50px;
   }
-  
+
   .timeline-line {
     left: 15px;
   }
-  
+
   .timeline-icon {
     left: -40px;
     font-size: 22px;
   }
-  
+
   .timeline-connector {
     left: -25px;
   }
-  
+
   .timeline-content h4 {
     font-size: 1.2rem;
   }
-  
+
   .timeline-period {
     font-size: 0.8rem;
   }
-  
+
   .timeline-content p {
     font-size: 0.9rem;
   }
@@ -182,51 +184,51 @@
   .about-connectors-section {
     padding: 2rem 4%;
   }
-  
+
   .intro-panel h1 {
     font-size: 2rem;
   }
-  
+
   .intro-panel p {
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
-  
+
   .timeline-panel {
     padding-left: 40px;
   }
-  
+
   .timeline-line {
     left: 12px;
     width: 3px;
   }
-  
+
   .timeline-item {
     margin-bottom: 2rem;
   }
-  
+
   .timeline-icon {
     left: -35px;
     font-size: 20px;
   }
-  
+
   .timeline-connector {
     left: -20px;
     height: 1.5px;
   }
-  
+
   .timeline-content {
     margin-left: 8px;
   }
-  
+
   .timeline-content h4 {
     font-size: 1.1rem;
   }
-  
+
   .timeline-period {
     font-size: 0.75rem;
   }
-  
+
   .timeline-content p {
     font-size: 0.85rem;
   }
@@ -237,50 +239,50 @@
   .about-connectors-section {
     padding: 1.5rem 3%;
   }
-  
+
   .intro-panel h1 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-  
+
   .intro-panel p {
     font-size: 0.85rem;
     line-height: 1.4rem;
   }
-  
+
   .timeline-panel {
     padding-left: 35px;
   }
-  
+
   .timeline-line {
     left: 10px;
   }
-  
+
   .timeline-item {
     margin-bottom: 1.5rem;
   }
-  
+
   .timeline-icon {
     left: -30px;
     font-size: 18px;
   }
-  
+
   .timeline-connector {
     left: -15px;
   }
-  
+
   .timeline-content {
     margin-left: 6px;
   }
-  
+
   .timeline-content h4 {
     font-size: 1rem;
   }
-  
+
   .timeline-period {
     font-size: 0.7rem;
   }
-  
+
   .timeline-content p {
     font-size: 0.8rem;
   }
@@ -291,42 +293,42 @@
   .about-connectors-section {
     padding: 5rem 8%;
   }
-  
+
   .intro-panel h1 {
     font-size: 3rem;
   }
-  
+
   .intro-panel p {
     font-size: 1.1rem;
     line-height: 1.8rem;
   }
-  
+
   .timeline-panel {
     padding-left: 70px;
   }
-  
+
   .timeline-line {
     width: 5px;
   }
-  
+
   .timeline-icon {
     left: -50px;
     font-size: 28px;
   }
-  
+
   .timeline-connector {
     left: -35px;
     height: 3px;
   }
-  
+
   .timeline-content h4 {
     font-size: 1.4rem;
   }
-  
+
   .timeline-period {
     font-size: 0.9rem;
   }
-  
+
   .timeline-content p {
     font-size: 1rem;
   }
@@ -337,37 +339,37 @@
   .about-connectors-section {
     padding: 6rem 10%;
   }
-  
+
   .intro-panel h1 {
     font-size: 3.5rem;
   }
-  
+
   .intro-panel p {
     font-size: 1.3rem;
     line-height: 2rem;
   }
-  
+
   .timeline-panel {
     padding-left: 80px;
   }
-  
+
   .timeline-icon {
     left: -55px;
     font-size: 32px;
   }
-  
+
   .timeline-connector {
     left: -40px;
   }
-  
+
   .timeline-content h4 {
     font-size: 1.6rem;
   }
-  
+
   .timeline-period {
     font-size: 1rem;
   }
-  
+
   .timeline-content p {
     font-size: 1.1rem;
   }

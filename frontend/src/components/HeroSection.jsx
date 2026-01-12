@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import dineshImg from "../assets/dinesh.jpeg"; // ✅ Make sure this path is correct
 import ProfileCard from "../ProfileCard"; // ✅ Ensure ProfileCard is created and styled
+import resumePdf from "../data/Dinesh(Software).pdf";
 
 // Roles for typewriter animation
 const roles = [
@@ -57,9 +58,8 @@ const HeroSection = () => {
       const x = (clientX - left) / width - 0.5;
       const y = (clientY - top) / height - 0.5;
 
-      containerRef.current.style.transform = `perspective(1000px) rotateY(${
-        x * 5
-      }deg) rotateX(${-y * 5}deg)`;
+      containerRef.current.style.transform = `perspective(1000px) rotateY(${x * 5
+        }deg) rotateX(${-y * 5}deg)`;
     };
 
     const handleMouseLeave = () => {
@@ -88,16 +88,47 @@ const HeroSection = () => {
     <section
       id="home"
       className="hero-section position-relative overflow-hidden"
-      style={{ 
-        paddingTop: "100px", 
-        paddingBottom: "80px",
+      style={{
         background: "transparent"
       }}
     >
+      <style>
+        {`
+          .hero-section {
+            padding-top: 100px; /* Default for desktop */
+            padding-bottom: 80px;
+          }
+          @media (max-width: 991.98px) {
+            .hero-section {
+              padding-top: 120px; /* More space for fixed navbar on mobile if needed, or less */
+              padding-bottom: 60px;
+            }
+            .display-4 {
+              font-size: 2.5rem !important; /* Smaller title on mobile */
+            }
+            .lead {
+              font-size: 1.1rem !important;
+            }
+            .hero-text-container {
+              padding-bottom: 2rem !important; /* Reduce bottom padding on mobile */
+              margin-bottom: 2rem !important;
+            }
+          }
+          @media (max-width: 575.98px) {
+             .hero-section {
+              padding-top: 100px; 
+              padding-bottom: 40px;
+            }
+            .display-4 {
+              font-size: 2rem !important;
+            }
+          }
+        `}
+      </style>
       <div className="container position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center">
           {/* Text Section */}
-          <div className="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+          <div className="col-lg-6 text-center text-lg-start mb-5 pb-5 mb-lg-0 pb-lg-0 hero-text-container">
             <p className="text-primary fw-semibold mb-2" style={{ color: '#a1c2bd' }}>Hello, I'm</p>
             <h1
               className="display-4 fw-bold mb-3"
@@ -118,25 +149,31 @@ const HeroSection = () => {
 
             {/* Buttons */}
             <div className="d-flex flex-column flex-sm-row gap-3 mt-4 justify-content-center justify-content-lg-start">
-              <a href="#projects" className="btn btn-primary btn-lg" style={{ 
-                backgroundColor: '#19183b', 
+              <a href="#projects" className="btn btn-primary btn-lg" style={{
+                backgroundColor: '#19183b',
                 borderColor: '#19183b',
                 color: '#e7f2ef'
               }}>
                 View My Work
               </a>
-              <a href="#contact" className="btn btn-outline-primary btn-lg" style={{ 
-                borderColor: '#19183b',
-                color: '#e7f2ef'
-              }}>
-                Contact Me
+              <a
+                href={resumePdf}
+                download="Dinesh(Software).pdf"
+                className="btn btn-outline-light btn-lg"
+                style={{
+                  borderColor: '#e7f2ef',
+                  color: '#e7f2ef'
+                }}
+              >
+                Download Resume
               </a>
+
             </div>
           </div>
 
           {/* Profile Image Section */}
           <div
-            className="col-lg-6 d-flex justify-content-center justify-content-lg-end"
+            className="col-lg-6 mt-4 mt-lg-0 d-flex justify-content-center justify-content-lg-end"
             ref={containerRef}
           >
             <ProfileCard
